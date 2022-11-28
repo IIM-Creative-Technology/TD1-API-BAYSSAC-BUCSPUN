@@ -21,11 +21,19 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 
+<<<<<<< Updated upstream
 Route::get('/cours', function ()  {
     return \App\Models\Cour::all();
 });
 
 Route::get('/cours/{id}', function ($id) {
+=======
+Route::get('/cour', function ()  {
+    return \App\Models\Cour::all();
+});
+
+Route::get('/cour/{id}', function ($id) {
+>>>>>>> Stashed changes
     $task = \App\Models\Cour::find($id);
 
     if ($task) {
