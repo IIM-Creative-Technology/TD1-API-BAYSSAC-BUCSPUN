@@ -22,7 +22,7 @@ Route::get('/cours', function ()  {
     return \App\Models\Cour::all();
 });
 
-Route::get('/cour/{id}', function ($id) {
+Route::get('/cours/{id}', function ($id) {
 
     $task = \App\Models\Cour::find($id);
 
@@ -36,7 +36,7 @@ Route::get('/cour/{id}', function ($id) {
 Route::put('/cours/{courId}', function ($courId) {
 
    $task = \App\Models\Cour::find($courId);
-   $data = request()->only(['name', 'description', 'programme', 'year', 'date_debut','date_fin']);
+   $data = request()->only(['name', 'image_url','description', 'programme', 'year', 'date_debut','date_fin']);
 
    request()->validate([
       'name' => 'required',
@@ -53,7 +53,12 @@ Route::put('/cours/{courId}', function ($courId) {
 
 Route::post('/cours', function () {
     request()->validate([
-       'name' => 'required'
+        'name' => 'required',
+        'description' => 'required',
+        'programme' => 'required',
+        'year' => 'required',
+        'date_debut' => 'required',
+        'date_fin' => 'required'
     ]);
 
     $data = request()->all();
