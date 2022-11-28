@@ -21,12 +21,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 
-Route::get('/tasks', function ()  {
-    return \App\Models\Task::all();
+Route::get('/cours', function ()  {
+    return \App\Models\Cour::all();
 });
 
-Route::get('/tasks/{id}', function ($id) {
-    $task = \App\Models\Task::find($id);
+Route::get('/cours/{id}', function ($id) {
+    $task = \App\Models\Cour::find($id);
 
     if ($task) {
         return $task;
@@ -35,35 +35,37 @@ Route::get('/tasks/{id}', function ($id) {
 
 
 
-Route::put('/tasks/{taskId}', function ($taskId) {
+Route::put('/cours/{courId}', function ($courId) {
 
-   $task = \App\Models\Task::find($taskId);
-   $data = request()->only(['title', 'content', 'done', 'priority']);
+   $task = \App\Models\Cour::find($courId);
+   $data = request()->only(['name', 'description', 'programme', 'year', 'date_debut','date_fin']);
 
    request()->validate([
-      'title' => 'required',
-      'content' => 'required',
-      'done' => 'required',
-      'priority' => 'required'
+      'name' => 'required',
+      'description' => 'required',
+      'programme' => 'required',
+      'year' => 'required',
+      'date_debut' => 'required',
+      'date_fin' => 'required'
    ]);
 
     $task->update($data);
 
 });
 
-Route::post('/tasks', function () {
+Route::post('/cours', function () {
     request()->validate([
-       'title' => 'required'
+       'name' => 'required'
     ]);
 
     $data = request()->all();
 
-    return \App\Models\Task::create($data);
+    return \App\Models\Cour::create($data);
 });
 
-Route::delete('/tasks/{taskId}', function ($taskId) {
+Route::delete('/cours/{coursId}', function ($coursId) {
 
-    $task = \App\Models\Task::find($taskId);
+    $task = \App\Models\Cour::find($coursId);
 
     if(!$task) {
         return response("Not found", 404);
