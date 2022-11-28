@@ -52,13 +52,21 @@
 
             // Loop to access all rows
             for (let r of data) {
+<<<<<<< HEAD
                 tab +=
                     `<div class="border">
+=======
+                tab += `<div class="border">
+>>>>>>> ba2276dd1f48059cae616698e149a51147e23d75
                     <img src="${r.image_url}"</img>
                     <h1>Cours: ${r.name}</h1>
                     <p>${r.description}</p>
                     <p>Programme : ${r.programme}</p>
+<<<<<<< HEAD
                     <p>Année : ${r.year}</p>
+=======
+                    <p>AnnÃ©e : ${r.year}</p>
+>>>>>>> ba2276dd1f48059cae616698e149a51147e23d75
                     <p>${r.date_debut} - ${r.date_fin}</p>
 
                 </div>`;
@@ -68,4 +76,8 @@
         }
 
     </script>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> ba2276dd1f48059cae616698e149a51147e23d75
