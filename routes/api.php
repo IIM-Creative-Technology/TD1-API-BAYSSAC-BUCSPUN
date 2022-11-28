@@ -21,7 +21,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 
-<<<<<<< Updated upstream
+
 Route::get('/cours', function ()  {
     return \App\Models\Cour::all();
 });
@@ -33,7 +33,7 @@ Route::get('/cour', function ()  {
 });
 
 Route::get('/cour/{id}', function ($id) {
->>>>>>> Stashed changes
+
     $task = \App\Models\Cour::find($id);
 
     if ($task) {
