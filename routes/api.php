@@ -18,17 +18,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-
-
-
-
 Route::get('/cours', function ()  {
-    return \App\Models\Cour::all();
-});
-
-Route::get('/cours/{id}', function ($id) {
-=======
-Route::get('/cour', function ()  {
     return \App\Models\Cour::all();
 });
 
