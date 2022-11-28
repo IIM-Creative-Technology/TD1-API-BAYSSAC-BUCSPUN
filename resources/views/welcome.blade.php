@@ -21,9 +21,15 @@
         </style>
     </head>
     <body class="antialiased">
+<<<<<<< HEAD
 
         <table id="card"></table>
 
+=======
+
+        <table id="card"></table>
+
+>>>>>>> master
     </body>
     <script>
         // api url
@@ -52,12 +58,29 @@
 
             // Loop to access all rows
             for (let r of data) {
+<<<<<<< HEAD
                 tab += `<div class="border">
+=======
+<<<<<<< HEAD
+                tab +=
+                    `<div class="border">
+=======
+                tab += `<div class="border">
+>>>>>>> ba2276dd1f48059cae616698e149a51147e23d75
+>>>>>>> master
                     <img src="${r.image_url}"</img>
                     <h1>Cours: ${r.name}</h1>
                     <p>${r.description}</p>
                     <p>Programme : ${r.programme}</p>
+<<<<<<< HEAD
                     <p>AnnÃ©e : ${r.year}</p>
+=======
+<<<<<<< HEAD
+                    <p>Année : ${r.year}</p>
+=======
+                    <p>AnnÃ©e : ${r.year}</p>
+>>>>>>> ba2276dd1f48059cae616698e149a51147e23d75
+>>>>>>> master
                     <p>${r.date_debut} - ${r.date_fin}</p>
 
                 </div>`;
@@ -67,4 +90,12 @@
         }
 
     </script>
+<<<<<<< HEAD
 </html>
+=======
+<<<<<<< HEAD
+</html>
+=======
+</html>
+>>>>>>> ba2276dd1f48059cae616698e149a51147e23d75
+>>>>>>> master
