@@ -61,7 +61,7 @@
                     <h1>Cours: ${r.name}</h1>
                     <p>${r.description}</p>
                     <p>Programme : ${r.programme}</p>
-                    <p>Année : ${r.year}</p>
+                    <p>AnnÃ©e : ${r.year}</p>
                     <p>${r.date_debut} - ${r.date_fin}</p>
 
                 </div>`;
@@ -73,5 +73,3 @@
     </script>
 
 </html>
-
-
