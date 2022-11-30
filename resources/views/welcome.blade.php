@@ -13,7 +13,7 @@
     </head>
     <body class="antialiased flex justify-center items-center">
 
-            <table id="card"></table>
+            <table class="flex" id="card"></table>
 
 
 

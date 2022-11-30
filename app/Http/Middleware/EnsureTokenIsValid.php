@@ -16,7 +16,7 @@ class EnsureTokenIsValid
      */
     public function handle(Request $request, Closure $next)
     {
-        if ($request->input('IDWSecurisation') !== 'LEMOTDEPASSE') {
+        if ($request->header('IDWSecurisation') !== 'LEMOTDEPASSE') {
             return response('error', 403);
         }
 
