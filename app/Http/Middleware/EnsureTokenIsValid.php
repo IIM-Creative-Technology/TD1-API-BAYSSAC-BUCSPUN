@@ -17,7 +17,7 @@ class EnsureTokenIsValid
     public function handle(Request $request, Closure $next)
     {
         if ($request->input('IDWSecurisation') !== 'LEMOTDEPASSE') {
-            return redirect('home');
+            return response('error', 403);
         }
 
         return $next($request);

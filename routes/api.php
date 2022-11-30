@@ -31,49 +31,54 @@ Route::get('/cours/{id}', function ($id) {
     }
 });
 
+Route::middleware([\App\Http\Middleware\EnsureTokenIsValid::class])->group(function () {
+    Route::put('/cours/{courId}', function ($courId) {
 
+        $task = \App\Models\Cour::find($courId);
+        $data = request()->only(['name', 'image_url','description', 'programme', 'year', 'date_debut','date_fin']);
 
-Route::put('/cours/{courId}', function ($courId) {
+        request()->validate([
+            'name' => 'required',
+            'description' => 'required',
+            'programme' => 'required',
+            'year' => 'required',
+            'date_debut' => 'required',
+            'date_fin' => 'required'
+        ]);
 
-   $task = \App\Models\Cour::find($courId);
-   $data = request()->only(['name', 'image_url','description', 'programme', 'year', 'date_debut','date_fin']);
+        $task->update($data);
 
-   request()->validate([
-      'name' => 'required',
-      'description' => 'required',
-      'programme' => 'required',
-      'year' => 'required',
-      'date_debut' => 'required',
-      'date_fin' => 'required'
-   ]);
-
-    $task->update($data);
-
+    });
 });
 
-Route::post('/cours', function () {
-    request()->validate([
-        'name' => 'required',
-        'description' => 'required',
-        'programme' => 'required',
-        'year' => 'required',
-        'date_debut' => 'required',
-        'date_fin' => 'required'
-    ]);
+Route::middleware([\App\Http\Middleware\EnsureTokenIsValid::class])->group(function () {
+    Route::post('/cours', function () {
+        request()->validate([
+            'name' => 'required',
+            'description' => 'required',
+            'programme' => 'required',
+            'year' => 'required',
+            'date_debut' => 'required',
+            'date_fin' => 'required'
+        ]);
 
-    $data = request()->all();
+        $data = request()->all();
 
-    return \App\Models\Cour::create($data);
+        return \App\Models\Cour::create($data);
+    });
 });
 
-Route::delete('/cours/{coursId}', function ($coursId) {
+Route::middleware([\App\Http\Middleware\EnsureTokenIsValid::class])->group(function () {
+    Route::delete('/cours/{coursId}', function ($coursId) {
 
-    $task = \App\Models\Cour::find($coursId);
+        $task = \App\Models\Cour::find($coursId);
 
-    if(!$task) {
-        return response("Not found", 404);
-    }
+        if(!$task) {
+            return response("Not found", 404);
+        }
 
-    $task->delete();
+        $task->delete();
 
+    });
 });
+
