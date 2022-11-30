@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#container {
+    border: solid 1px rgba(128, 128, 128, 0.6);
+}
+
+.bd {
+    border-bottom: solid 1px rgba(128, 128, 128, 0.5);
+}
+
+body {
+    height: 100vh;
+}
