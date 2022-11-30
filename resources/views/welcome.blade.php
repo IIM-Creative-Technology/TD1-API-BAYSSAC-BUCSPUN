@@ -22,7 +22,9 @@
     </head>
     <body class="antialiased">
 
-        <table id="card"></table>
+            <table id="card"></table>
+
+
 
     </body>
     <script>
@@ -53,9 +55,9 @@
             // Loop to access all rows
             for (let r of data) {
 
-                tab += `<div class="border">
+                tab += `<div class="">
 
-                    <img src="${r.image_url}"</img>
+                    <img class="w-72" src="${r.image_url}"</img>
                     <h1>Cours: ${r.name}</h1>
                     <p>${r.description}</p>
                     <p>Programme : ${r.programme}</p>
